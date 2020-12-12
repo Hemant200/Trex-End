@@ -75,6 +75,7 @@ function draw() {
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
+    console.log(score)
     camera.position.x = trex.x
     score = score + Math.round(getFrameRate()/60);
     if (keyDown("RIGHT_ARROW"))
@@ -99,7 +100,7 @@ function draw() {
     spawnClouds();
     spawnObstacles();
   
-    if(obstaclesGroup.isTouching(trex)||score>400){
+    if(obstaclesGroup.isTouching(trex)||score>210){
       gameState = END;
     }
     
